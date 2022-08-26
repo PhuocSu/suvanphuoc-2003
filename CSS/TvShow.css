@@ -1,0 +1,507 @@
+:root {
+    --width: 85%;
+    --height_img: 100px;
+}
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    scroll-behavior: smooth;
+}
+.header{
+  height: 100px;
+  border-top: 4px solid red;   
+  position: relative;
+}
+.header .logo-icon{
+  width: 86px;
+  height: 85px;
+  margin-top: 1px ;
+  position: absolute;
+  top: 1px;
+  left: 20px;
+} 
+.header .header-top{
+  height: 42px;
+  background: #ccf381;
+}
+.header .header-bottom{
+  height: 46px;
+  background: #4832d4;
+  border-bottom: 1px solid rgb(102, 102, 102,0.1);
+}
+
+
+                          /*Day-night mode*/
+ 
+/* .title-Tv{
+  padding: 0 1.2rem;
+  background: linear-gradient(#333,grey,#fff);
+} */
+.live-content{
+  height: 62px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 0 30px;
+  margin: 0 10px;
+  border-bottom: 1px solid rgb(70, 93, 93,0.2) ;
+  transform: translateY(7%);
+}
+.live-now{
+  display: flex;
+  align-items: center;
+}
+@keyframes doimau{
+  from{
+    background: #ec8484;
+  }
+  to{
+    background: #f81c1c;
+  }
+}
+#dot{
+  height: 15px;
+  width: 15px;
+  background: #333;
+  border-radius: 50px;
+  animation: doimau .8s infinite;
+  margin: 0 10px;
+}
+.utilities {
+  width: 14%;
+}
+.utilities .day-night-language{
+  padding: 0 2.5rem;
+}
+label{
+  position: absolute;
+  right: 3.5rem;
+  top: 1.2rem;
+  width: 45px;
+  height: 22px;
+  border-radius: 20px;
+  border: 2px solid;
+}
+label::before{
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 14.5px;
+  border-radius: 20px;
+  background: black;
+  border: 2px solid;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+label.active::before{ 
+                  /* :active dùng để chọn phần tử đang được người dùng nhấp chuột vào. 
+                  VD: thay đổi nền trắng sang vàng khi nấp chuột
+                  .active: đơn giản là một bộ chọn lớp, áp dụng cho một phần tử neo có lớp "mở" và là con của một phần tử có lớp "hoạt động"
+                   
+                  ==> trong Th này, phần tử label là lớp "hoạt động" vậy nên .active là hợp lý*/
+  left: 20px;
+  background: #fff;
+}
+body.night{
+  background: #000;
+  color: #fff ;
+}
+
+                                      /*Top-tags content*/
+
+.top-tags{
+  margin: 0 2rem;
+  padding-bottom: 1.5rem ;
+}
+.top-tags ul{
+  display: flex;
+  justify-content: center;
+}
+.top-tags ul .tag{
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+  line-height: 30px;
+  position: relative;
+}
+#mobile-menu-btn{
+  display: none;
+}
+
+                                 /*CSS thẻ li có gạch đỏ */
+.top-tags li::after{
+  content: '';
+  position: absolute;    
+  background: #ff3c78;
+  height: 3px;
+  width: 0; /*chạy từ 0 -> 100% khi hover vào*/
+  left: 0;
+  bottom:  12px;   
+  transition: all .5s ease;
+}
+.top-tags li:not(:first-child):hover::after {
+  width: 100%;
+}
+span.dot{
+  margin: auto 0;
+  font-size: 50px;
+  font-weight: 700;
+  border-radius: 50%;
+  height: 5px;
+  width: 5px;
+  background: darkblue;
+}
+
+.margin{
+  margin: 0 10%;
+  width: 80%;
+}
+.video{
+  margin-bottom: 1.5rem;
+}
+.video-main-content{
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  
+}
+hr{
+  width: 80%;
+  margin: 0 auto;
+  background: rgb(0, 0, 0, 0);
+}
+
+                         /*Social-icon*/
+.social-icon{
+  width: 80%;
+  height: 126px;
+}
+.icon-inf{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0 40px;
+}
+.icon-inf a{
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.5rem 1.2rem;
+  margin: 0 4px;
+  border: 1px solid rgb(209, 200, 200) ;
+  width: 65px;
+  border-radius: 4px;
+  color: hsl(0 0% 29%);
+  transition: all .8s;
+}
+.icon-inf a:hover{
+  color: aqua;
+}
+
+
+
+h2{
+  padding-bottom: 15px;
+  font-size: 1.5rem;
+  color: #1585d4;
+  text-transform: uppercase;
+}
+.latest-show{
+  display: flex;
+  flex-wrap: wrap; /*Cho phép các items tự động xuống hàng hoặc vẫn luôn nằm trên cùng một hàng khi kích thước container thay đổi*/
+  padding-bottom: 30px;
+  margin: 5px;
+}
+.video-container{
+  width: 50%;
+  padding: 2px 20px 2px 0;
+}
+.video-container .text{
+  font-size: 18px;
+  margin: 10px 0;
+}
+.video-wrapper{
+  width: 25%;
+  padding: 2px 20px 2px 0;
+}
+.video-wrapper .title-vid{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.video-wrapper .title-vid a:hover{
+  color: #f81c1c;
+  transition: all 0.3s;
+}
+                                            /*Zoom pictures*/
+.images{ /*vì là div nên có attribute: display block*/
+  overflow: hidden; 
+}
+.video-wrapper img{
+  margin: 10px 0;
+  transition: all 0.3s ease-in-out;
+}
+.video-wrapper img:hover{
+  transform: scale(1.1); /*tương ứng zoom 10% khung ảnh*/
+}
+.video-wrapper .title-vid{
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+.video-wrapper .hour-date-channel{
+  padding-left: 5px;
+}
+
+    /* Footer */
+#footer{
+    background-image: url(img/bg-footer.jpg);
+    font-size: 15px;
+    color: #333;
+    height: 516px;
+}
+.container-bottom{
+    margin: 0 90px;
+    padding: 0px 15px; 
+    width: 85.5%;
+    height: 100%;
+    
+}
+.footer-top{
+    padding: 50px 0 30px;
+    height: 77%;
+    border-bottom: 1px solid #4169E1;
+}
+.foot-logo{
+    margin-bottom: 30px;
+}
+.navigation-footer{
+    float: left;
+    padding: 0 15px;
+    width: 25%;
+    height: 100%;
+    text-transform: capitalize;
+}
+.navigation-footer:first-child{
+    padding-left: 0px;
+}
+.navigation-footer .foot-social a {
+    display: inline-block;
+    width: 60px;
+    background: rgba(21, 133, 212, 0.15);
+    clip-path: polygon(20px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%);
+    color: #fff;
+    font-size: 1.125rem;
+    /* height: 35px; */
+    line-height: 35px;
+    text-align: center;
+}
+.ModuleContent2{
+    position: relative;
+    bottom: 3px;
+}
+.title{
+    color: #1585d4;
+    font-weight: 700;
+    margin-bottom: 20px;  
+    text-transform: uppercase;      /*vt hoa*/
+}
+.foot-menu{
+    list-style-type: none;
+    font-size: 12px;
+
+}
+.foot-menu li{
+    margin-bottom: 8px;
+}
+.foot-menu li a{
+    color: #808a9a;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.foot-menu > li:hover > a, .foot-social>a:hover>i{
+    color: royalblue;
+}
+.footer-bottom{
+    padding: 17px 20px;
+    width: 100%;
+}
+.bottom1, .bottom2{
+    text-align: center;
+}
+.bottom1 li {
+    display: inline-block;
+    font-weight: 500;
+    padding: 10px;
+}
+.bottom1 li a{
+    color: white;
+}
+.bottom1 li + li::before{
+    content: '';    
+    display: inline-block;
+    color: rgba(96, 175, 231, 0.35);
+    margin-right: 17px;
+}.bottom2 {
+    color: rgba(255, 255, 255, 0.5);
+}
+                        /*Button to top*/
+.go-to-top{
+    background: white;
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all .4s;
+    text-decoration: none;
+    font-size: 30px;
+    pointer-events: none; 
+}
+.go-to-top.active{
+    bottom: 32px;
+    opacity: .5;
+    pointer-events: auto;
+}
+
+
+
+@media (min-width: 320px) and (max-width: 859px) {
+  *{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    scroll-behavior: smooth;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .live-content {
+    height: 62px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0;
+    margin: 0 10px;
+    border-bottom: 1px solid rgb(70, 93, 93,0.2);
+    transform: translateY(-7%);
+  }
+  .utilities .day-night-language {
+    padding: 0 0;
+  }
+  .day-night-language p{
+    display: none;
+  }
+  label {
+    position: absolute;
+    right: 2rem;
+    top: 1.2rem;
+    width: 45px;
+    height: 22px;
+    border-radius: 20px;
+    border: 2px solid;
+}
+  #mobile-menu-btn{
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    background: rgb(153, 121, 121,0.3);
+    float: right;
+    font-size: 1.5rem;
+    margin: auto 15px;
+  }
+  #mobile-menu-btn:hover{
+    cursor: pointer;
+  }
+  .top-tags { 
+    margin: 0 0;
+    padding-bottom: 1.5rem;
+    height: 62px; /*Mục đích: bỏ thẻ i vào li dầu tiên, và khi nhấp vào nav-bar sẽ hiện ra kích thước thật 310px*/
+    background: #a2a941;
+    overflow: hidden; /*ẩn những đối tượng cượt ra ngoài thẻ div (62px)*/
+  }
+
+  .top-tags ul {
+    display: block;
+  }
+
+  .top-tags li::after{
+    display: none;
+  }
+
+  h1{
+    font-size: 20px;
+  }
+  h2{
+    text-align: left;
+  }
+  .video-container {
+    width: 100%;
+    padding: 0 0;
+  }
+  .video-wrapper {
+    width: 100%;
+    padding: 0px 0px 0px 0;
+}
+  .navigation-footer:first-child {
+    padding-left: 15px;
+  }
+
+
+
+
+                             /*FOOTER*/
+  #footer {
+      height: auto;
+      background-image: url(img/bg-footer.jpg);
+      font-size: 15px;
+      color: #333;
+      margin: 60px 0 0;
+  }
+  .footer-top {
+      padding: 50px 0 30px;
+      height: 77%;
+      border: none;
+  }
+  .container-bottom {
+      margin: 0 0;
+      padding: 0px 15px; 
+      width: 100%;
+      height: 100%;
+  }
+  .navigation-footer {
+      float: left;
+      padding: 0 15px;
+      width: 100%;
+      text-align: center;
+      text-transform: capitalize;
+  }
+}
+@media screen and (min-width: 860px) and (max-width:1024px) and (orientation: landscape) {
+  .day-night-language p{
+    display: none;
+  }
+  #footer{
+    height: 100%;
+  }
+  .navigation-footer:first-child{
+    width: 100%;
+    text-align: center;
+  }
+  .navigation-footer {
+    width: 33.3%;
+  }
+  .footer-top{
+    border: none;
+  }
+}
